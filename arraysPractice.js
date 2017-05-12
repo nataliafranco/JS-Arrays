@@ -32,12 +32,12 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 
   //Code Here
 function looper (arr) {
-  for (var i = 0; i < arr.length; i++;) {
+  for (var i = 0; i < arr.length; i++) {
     alert(arr[i])
   }
 }
 
-looper(family)
+// looper(family)
 
 
 //Next problem
@@ -49,8 +49,8 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
   //Code Here
 function reversedLooper (letters){
-  for (var i = letters.length-1; i > 0; i--) {
-  alert (letters[i]);
+  for (var i = letters.length-1; i >= 0; i--) {
+    alert (letters[i]);
   }
 }
 
@@ -79,22 +79,18 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 
   //Code Here
-function divider (numbersArray) {
-  var numsOdd = numbersArray;
-  var evens = evenFinder(numbersArray);
+function divider (numbers) {
+  var evens = [];
+  var odds = [];
 
-  var odds = function(numsOdd) {
-    for(var i = numsOdd.length - 1; i >= 0; i--) {
-      if(!(numsOdd[i] % 2)) {
-        numsOdd.splice(i, 1);
-      }
+  for (var i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 == 0) {
+      evens.push(numbers[i]);
+    } else {
+      odds.push(numbers[i]);
     }
-    return numsOdd;
-  };
-
-  var arr = [evens, odds];
-
-  return arr;
+  }
+return [evens, odds]
 }
 
 
@@ -111,7 +107,9 @@ var getRandomArbitrary = function() {
 
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
 
-  //Code Here
+function finder () {
+
+}  //Code Here
 
   //Code Here
 
@@ -123,7 +121,13 @@ var getRandomArbitrary = function() {
 var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
-  //Code Here
+function reverse(str) {
+    str = str.split('').reverse().join('');
+    return x;
+}
+
+str = reverse(str);
+}  //Code Here
 
 
 //Next Problem
