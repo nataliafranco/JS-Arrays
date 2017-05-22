@@ -5,10 +5,10 @@ var arr = [10,20,30];
 //Create a function named 'first' that is given 'arr' as the argument and  returns the first item in the given array.
 
   //Code Here
-function first (arr) {
+function first(arr) {
   return arr[0];
 }
-
+first(arr);
 
 //Next problem
 
@@ -19,10 +19,10 @@ var arr = [40,50,60,70,80];
 
 
   //Code Here
-function last (arr) {
+function last(arr) {
   return arr[arr.length - 1];
 }
-
+last(arr);
 
 //Next Problem
 
@@ -31,13 +31,13 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 //Create a function named 'looper' that is given family as it's only argument, loops through the given array, and alerts every item in the array.
 
   //Code Here
-function looper (arr) {
+function looper(arr) {
   for (var i = 0; i < arr.length; i++) {
-    alert(arr[i])
+    alert(arr[i]);
   }
 }
 
-// looper(family)
+looper(family);
 
 
 //Next problem
@@ -61,7 +61,7 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
 
   //Code Here
-function evenFinder (nums) {
+function evenFinder(nums) {
   for(var i = 0; i < nums.length; i++) {
     if (nums[i]%2 !== 0) {
       nums.splice(i, 1);
@@ -69,6 +69,7 @@ function evenFinder (nums) {
   }
   return nums;
 }
+evenFinder(nums);
 //Next problem
 
 
@@ -90,7 +91,7 @@ function divider (numbers) {
       odds.push(numbers[i]);
     }
   }
-return [evens, odds]
+return [evens, odds];
 }
 
 
@@ -107,9 +108,15 @@ var getRandomArbitrary = function() {
 
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
 
-function finder () {
-
-}  //Code Here
+  function finder (arr) {
+    var rando = getRandomArbitrary();
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === rando) {
+          return true;
+        }
+      }
+      return false;
+    }  //Code Here
 
   //Code Here
 
@@ -149,11 +156,27 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   In both the removeItem function and the addItem function, you will also need to check for valid aurguments. Specrunner will try to call your functions without passing in valid aurguments. When this happens, you will need to respond by returning an empty array.
 */
 
-  //Code Here
+function removeItem(myGroceryList, itemToRemove) {
+      for (var i = 0; i < myGroceryList.length; i++) {
+        if (itemToRemove === myGroceryList[i]) {
+          myGroceryList.splice(i, 1);
+        }
+      }
+      return myGroceryList;
+    }
+
+    removeItem(myGroceryList, 'chips');  //Code Here
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
 
+function addItem (myGroceryList, itemToAdd) {
+  myGroceryList.push(itemToAdd);
+  return myGroceryList;
+}
+
+
+addItem(myGroceryList, 'salad');
 
 
 //Next Problem
@@ -162,7 +185,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
-  //Code Here
+function maker (){
+  var arr = [];
+  for ( var i = 0; i < 215; i++){
+    arr.push(i+1);
+  }
+  return arr;
+}
+maker();//Code Here
 
 
 
@@ -173,7 +203,15 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //Write a function called addTen that is given 'numbers' as it's only argument and returns a new
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
-  //Code Here
+function addTen(numbers) {
+  for ( var i = 0; i < numbers.length; i++){
+    if( numbers[i] < 10){
+      numbers[i] = parseInt(numbers[i]) + 10;
+    }
+  }
+  return numbers;
+}
+addTen(numbers);  //Code Here
 
 
 
@@ -194,6 +232,13 @@ for(var i = 0; i < num2; i++){
 //Above is some code that adds a random number of values to both arr1 and arr2.
 //Write a function called 'longer' that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
 
+function longer( arr1, arr2){
+  if(arr1.length > arr2.length){
+    return arr1;
+  }else {
+    return arr2;
+  }
+}
   //Code Here
 
 
@@ -243,13 +288,20 @@ var colt = {
 array with those four objects. After that console.log the length of the Array and make
 sure that it's equal to 4. */
 
-  //Code Here
+  devMountainEmployees.push(tyler, cahlan, ryan, colt);
+
+  console.log(devMountainEmployees.length);//Code Here
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
   //Code Here
-
+  for( var i = 0; i < devMountainEmployees.length; i++){
+    if(devMountainEmployees[i].name === "Cahlan")
+    {
+      devMountainEmployees.splice(i,1);
+    }
+  }
 
 
 
@@ -262,6 +314,7 @@ of Data is to have an Array full of objects. */
 //Create an empty array called users.
 
   //Code Here
+  var users = [];
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -273,9 +326,26 @@ var user1 = {
     password: 'iLoveJavaScript',
     username: 'infiniateLoop'
 };
-
+var user2 = {
+    name: 'Mike Smith',
+    email: 'm.smith@hotmail.com',
+    password: 'iLOveJavSC',
+    username: 'inounse'
+};
+var user3 = {
+    name: 'Charles Ferre',
+    email: 'cferrer@gmail.com',
+    password: 'print1234',
+    username: 'cferre'
+};
+var user4 = {
+    name: 'Mark Miller',
+    email: 'm_millers23@gmail.com',
+    password: 'myName99',
+    username: 'mm2432mm'
+};
 //Your Code Here
-
+users.push(user1,user2,user3,user4);
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
 and those objects contain properties about the specific person you follow.*/
@@ -285,5 +355,11 @@ objects until you find Tyler's account (use tylermcginnis33@gmail.com to find hi
 Once you find the particular index he's located in, delete him from the array.*/
 
   //Code Here
+  for ( var i = 0; i < users.length; i++){
+    if( users[i]["email"] === "tylermcginnis33@gmail.com"){
+      users.splice(i,1);
+    }
+  }
 
+console.log(users);
 //The activity we just did is very much how data works in 'the real world'.
